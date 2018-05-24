@@ -7,7 +7,7 @@
  Посмотрите как работает forEach и повторите это поведение для массива, который будет передан в параметре array
  */
 function forEach(array, fn) {
-    for (var i = 0; i < array.length; i++) {
+    for (let i = 0; i < array.length; i++) {
         fn(array[i], i, array);
     }
 }
@@ -21,7 +21,7 @@ function forEach(array, fn) {
 function map(array, fn) {
     var result = [];
 
-    for (var i = 0; i < array.length; i++) {
+    for (let i = 0; i < array.length; i++) {
         result.push(fn(array[i], i, array));
     }
 
@@ -65,9 +65,8 @@ function reduce(array, fn, initial) {
    upperProps({ name: 'Сергей', lastName: 'Петров' }) вернет ['NAME', 'LASTNAME']
  */
 function upperProps(obj) {
-    var props = Object.keys(obj);
 
-    return props.map(function (prop) {
+    return Object.keys(obj).map(function (prop) {
         return prop.toUpperCase();
     })
 }
